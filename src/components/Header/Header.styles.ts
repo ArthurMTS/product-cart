@@ -20,11 +20,17 @@ export const LogoBox = styled(Link)({
   alignItems: "center",
   textDecoration: "none",
   gap: 5,
+  "&:hover > p": {
+    transition: "all .2s",
+    color: "#1976D2",
+  },
 });
 
 export const LogoText = styled(Typography)({
   fontSize: 24,
   color: "#353545",
+  fontWeight: 700,
+  textShadow: "2px 2px 2px #656575",
 });
 
 export const NavBar = styled("nav")({
@@ -41,14 +47,14 @@ export const NavLink = styled(Link)({
   fontSize: 18,
   color: "#222",
   "&:hover": {
-    borderBottom: "1.5px solid #353545",
+    borderBottom: "2px solid #1976D2",
   },
   "&:nth-child(4)": {
     borderBottom: "none",
     transform: "scale(1.1)",
     display: "flex",
     justifyContent: "center",
-    color: "#353545",
+    color: "#1976D2",
     gap: 5,
   },
 });
@@ -58,5 +64,5 @@ export const UserAvatar = styled("img")({
   height: 50,
   marginLeft: 20,
   borderRadius: "100%",
-  border: "2px solid #353545",
+  border: "2px solid #1976D2",
 });
