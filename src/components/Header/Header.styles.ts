@@ -12,6 +12,7 @@ export const HeaderWrapper = styled("header")({
   position: "fixed",
   left: 0,
   top: 0,
+  zIndex: 1,
 });
 
 export const LogoBox = styled(Link)({
