@@ -1,3 +1,4 @@
+import { ProductCartInfo } from "config/interfaces";
 import React from "react";
 
 interface ProductInfo {
@@ -12,20 +13,12 @@ interface ProductInfo {
   price: number;
 }
 
-interface ProductCartInfo {
-  id: number;
-  title: string;
-  image: string;
-  price: number;
-  count?: number;
-}
-
 interface CartContextData {
   products: ProductInfo[];
   cart: ProductCartInfo[];
   setProducts: React.Dispatch<React.SetStateAction<ProductInfo[]>>;
   getProduct: (id: number) => ProductInfo | undefined;
-  addToCart: (product: ProductInfo) => void;
+  addToCart: (product: ProductCartInfo) => void;
   removeFromCart: (id: number) => void;
   updateCountCart: (id: number, count: number) => void;
 }
@@ -44,7 +37,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     return products.find(product => product.id === id);
   };
 
-  const addToCart = (product: ProductInfo) => {
+  const addToCart = (product: ProductCartInfo) => {
     const cartList = [...cart];
     cartList.push(product);
     setCart(cartList);

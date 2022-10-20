@@ -1,4 +1,5 @@
 import { Box, Button } from "@mui/material";
+import { CartContext } from "contexts";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -26,9 +27,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   id,
 }) => {
   const navigate = useNavigate();
+  const { addToCart } = React.useContext(CartContext);
 
   const onProductTitleClick = () => {
     navigate(`/products/${id}`);
+  };
+
+  const onAddToCartButtonClick = () => {
+    addToCart({
+      id,
+      title,
+      image,
+      price,
+      count: 1,
+    });
   };
 
   return (
@@ -49,7 +61,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </Box>
       <ProductFooter>
         <ProductPrice>U$ {price.toFixed(2)}</ProductPrice>
-        <Button variant="contained">Add to cart</Button>
+        <Button
+          variant="contained"
+          onClick={onAddToCartButtonClick}
+        >
+          Add to cart
+        </Button>
       </ProductFooter>
     </CardWrapper>
   );
