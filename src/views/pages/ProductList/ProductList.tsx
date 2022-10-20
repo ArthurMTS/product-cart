@@ -1,23 +1,12 @@
 import { Header } from "components/Header";
 import { ProductCard } from "components/ProductCard";
 import { api } from "config/api";
+import { CartContext } from "contexts";
 import React from "react";
 import { Main } from "./ProductList.styles";
 
-interface ProductInfo {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  rating: {
-    count: number;
-    rate: number;
-  }
-  price: number;
-}
-
 export const ProductList: React.FC = () => {
-  const [products, setProducts] = React.useState<ProductInfo[]>([]);
+  const { products, setProducts } = React.useContext(CartContext);
 
   React.useEffect(() => {
     const fetchProducts = async () => {

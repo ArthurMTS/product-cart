@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PagesRoutes } from "views/constants/routes";
+import { Cart } from "views/pages/Cart";
 import { Contact } from "views/pages/Contact";
 import { Home } from "views/pages/Home";
 import { ProductList } from "views/pages/ProductList";
@@ -20,6 +21,10 @@ export const Router: React.FC = () => {
         <Route
           path={PagesRoutes.contacts}
           element={<Contact />}
+        />
+        <Route
+          path={PagesRoutes.cart}
+          element={<Cart />}
         />
       </Routes>
     </BrowserRouter>
