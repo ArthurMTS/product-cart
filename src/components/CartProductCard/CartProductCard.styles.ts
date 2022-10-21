@@ -21,9 +21,20 @@ export const TitleWrapper = styled("div")({
   
 });
 
+export const Image = styled("img")({
+  height: 60,
+  width: 60,
+  cursor: "pointer",
+});
+
 export const Title = styled(Typography)({
   fontSize: 18,
   fontWeight: 700,
+  cursor: "pointer",
+  transition: "all .2s",
+  "&:hover": {
+    color: "rgb(25, 118, 210)",
+  },
 });
 
 export const Description = styled("div")({
@@ -46,4 +57,13 @@ export const ProductActions = styled("div")({
   alignItems: "center",
   gap: 10,
   paddingRight: 10,
+  "& > div": {
+    display: "flex",
+    flexDirection: "column",
+    marginRight: 15,
+  },
+});
+
+export const DeleteIcon = styled("img")({
+  cursor: "pointer",
 });

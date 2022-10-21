@@ -11,6 +11,7 @@ interface CartContextData {
   incrementCountCart: (id: number) => void;
   decrementCountCart: (id: number) => void;
   getItemsQuantity: () => number;
+  getTotal: () => number;
 }
 
 interface CartProviderProps {
@@ -50,6 +51,9 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const getItemsQuantity = () => 
     cart.reduce((total, product) => total + product.count, 0);
 
+  const getTotal = () =>
+    cart.reduce((total, product) => total + (product.count * product.price), 0);
+
   const incrementCountCart = (id: number) => {
     const cartList = cart.map(product => {
       if (product.id === id)
@@ -83,6 +87,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       incrementCountCart,
       decrementCountCart,
       getItemsQuantity,
+      getTotal,
     }}>
       {children}
     </CartContext.Provider>

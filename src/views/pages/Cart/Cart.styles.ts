@@ -23,11 +23,10 @@ export const CartContent = styled("section")({
 
 export const CartProducts = styled("div")({
   width: "50vw",
-  //height: "70vh",
   display: "flex",
   flexDirection: "column",
   gap: 10,
-  //overflow: "scroll",
+  marginBottom: 20,
 });
 
 export const CartSummary = styled("div")({

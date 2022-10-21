@@ -5,7 +5,7 @@ import React from "react";
 import { BuyButton, CartContent, CartProducts, CartSummary, CartText, Main, SummaryItem, SummaryLabel, SummaryValue } from "./Cart.styles";
 
 export const Cart: React.FC = () => {
-  const { cart } = React.useContext(CartContext);
+  const { cart, getTotal } = React.useContext(CartContext);
 
   return (
     <React.Fragment>
@@ -32,7 +32,7 @@ export const Cart: React.FC = () => {
                 Shipping
               </SummaryLabel>
               <SummaryValue>
-                U$ 00.00
+                U$ 0.00
               </SummaryValue>
             </SummaryItem>
             <SummaryItem>
@@ -40,7 +40,7 @@ export const Cart: React.FC = () => {
                 Discount
               </SummaryLabel>
               <SummaryValue>
-                U$ 00.00
+                U$ 0.00
               </SummaryValue>
             </SummaryItem>
             <SummaryItem>
@@ -48,7 +48,7 @@ export const Cart: React.FC = () => {
                 Total
               </SummaryLabel>
               <SummaryValue>
-                U$ 00.00
+                U$ {getTotal().toFixed(2)}
               </SummaryValue>
             </SummaryItem>
             <BuyButton
