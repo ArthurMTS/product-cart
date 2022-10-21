@@ -39,7 +39,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       title,
       image,
       price,
-      count: 1,
     });
   };
 

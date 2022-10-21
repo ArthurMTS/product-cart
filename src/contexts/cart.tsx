@@ -1,26 +1,16 @@
-import { ProductCartInfo } from "config/interfaces";
+import { ProductCartInfo, ProductInfo } from "config/interfaces";
 import React from "react";
-
-interface ProductInfo {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  rating: {
-    count: number;
-    rate: number;
-  }
-  price: number;
-}
 
 interface CartContextData {
   products: ProductInfo[];
   cart: ProductCartInfo[];
   setProducts: React.Dispatch<React.SetStateAction<ProductInfo[]>>;
   getProduct: (id: number) => ProductInfo | undefined;
-  addToCart: (product: ProductCartInfo) => void;
+  addToCart: (product: ProductInfo) => void;
   removeFromCart: (id: number) => void;
-  updateCountCart: (id: number, count: number) => void;
+  incrementCountCart: (id: number) => void;
+  decrementCountCart: (id: number) => void;
+  getItemsQuantity: () => number;
 }
 
 interface CartProviderProps {
@@ -37,9 +27,18 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     return products.find(product => product.id === id);
   };
 
-  const addToCart = (product: ProductCartInfo) => {
+  const addToCart = (product: ProductInfo) => {
     const cartList = [...cart];
-    cartList.push(product);
+    const isInCart = cartList.some(item => item.id === product.id);
+    if (isInCart) return;
+
+    cartList.push({
+      id: product.id,
+      title: product.title,
+      image: product.image,
+      price: product.price,
+      count: 1,
+    });
     setCart(cartList);
   };
 
@@ -48,10 +47,24 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     setCart(cartList);
   };
 
-  const updateCountCart = (id: number, count: number) => {
+  const getItemsQuantity = () => 
+    cart.reduce((total, product) => total + product.count, 0);
+
+  const incrementCountCart = (id: number) => {
     const cartList = cart.map(product => {
       if (product.id === id)
-        product.count = count;
+        product.count += 1;
+
+      return product;
+    });
+
+    setCart(cartList);
+  };
+
+  const decrementCountCart = (id: number) => {
+    const cartList = cart.map(product => {
+      if (product.id === id && product.count > 1)
+        product.count -= 1;
 
       return product;
     });
@@ -67,7 +80,9 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       getProduct,
       addToCart,
       removeFromCart,
-      updateCountCart,
+      incrementCountCart,
+      decrementCountCart,
+      getItemsQuantity,
     }}>
       {children}
     </CartContext.Provider>

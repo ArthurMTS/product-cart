@@ -10,8 +10,12 @@ import {
 import { PagesRoutes } from "views/constants/routes";
 import ShoppingBag from "assets/icons/ShoppingBag.svg";
 import ShoppingCart from "assets/icons/ShoppingCart.svg";
+import { CartContext } from "contexts";
 
 export const Header: React.FC = () => {
+  const { getItemsQuantity } = React.useContext(CartContext)
+  const itemsQuantity = getItemsQuantity();
+
   return (
     <HeaderWrapper>
       <LogoBox to={PagesRoutes.home}>
@@ -25,6 +29,7 @@ export const Header: React.FC = () => {
         <NavLink to={PagesRoutes.contacts}>Contact</NavLink>
         <NavLink to={PagesRoutes.cart}>
           <img src={ShoppingCart} alt="Shopping cart" />
+          {itemsQuantity}
         </NavLink>
 
         <UserAvatar

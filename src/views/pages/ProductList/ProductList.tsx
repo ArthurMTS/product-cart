@@ -16,7 +16,7 @@ export const ProductList: React.FC = () => {
     };
 
     fetchProducts();
-  }, [api]);
+  }, [setProducts]);
 
   return (
     <React.Fragment>
@@ -28,7 +28,7 @@ export const ProductList: React.FC = () => {
             id={product?.id}
             image={product?.image}
             title={product?.title}
-            description={product?.description}
+            description={product?.description || ""}
             price={product?.price}
           />  
         )}
