@@ -6,6 +6,7 @@ export const Main = styled("main")({
   padding: "120px 10vw 0 10vw",
   display: "flex",
   flexDirection: "column",
+  minHeight: "calc(100vh - 60px)",
 });
 
 export const CartText = styled(Typography)({

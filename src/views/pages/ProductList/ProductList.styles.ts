@@ -2,7 +2,8 @@ import { styled } from "@mui/system";
 
 export const Main = styled("main")({
   width: "90vw",
-  marginTop: 120,
+  minHeight: "calc(100vh - 200px)",
+  margin: "120px 0 20px 0",
   display: "flex",
   justifyContent: "center",
   gap: 20,

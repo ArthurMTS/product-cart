@@ -2,6 +2,7 @@ import { Button, styled, Typography } from "@mui/material";
 
 export const Main = styled("main")({
   marginTop: 120,
+  minHeight: "calc(100vh - 180px)",
   display: "flex",
   gap: "1vw",
   padding: "0 5vw",
@@ -26,6 +27,7 @@ export const Image = styled("img")({
 
 export const DescriptionWrapper = styled("div")({
   width: "40vw",
+  height: "fit-content",
   backgroundColor: "#FFFFFF",
   padding: 20,
   borderRadius: 5,

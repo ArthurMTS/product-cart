@@ -7,6 +7,7 @@ import Linkedin from "assets/icons/Linkedin.svg";
 import Mail from "assets/icons/Mail.svg";
 import Phone from "assets/icons/Phone.svg";
 import Twitter from "assets/icons/Twitter.svg";
+import { Footer } from "components/Footer";
 
 export const Contact: React.FC = () => (
   <React.Fragment>
@@ -38,5 +39,6 @@ export const Contact: React.FC = () => (
         alt="Phone icon"
       />
     </Main>
+    <Footer />
   </React.Fragment>
 );

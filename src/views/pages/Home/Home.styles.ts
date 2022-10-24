@@ -49,7 +49,7 @@ export const Subtitle = styled(Typography)({
 });
 
 export const BackgroundImage = styled("img")({
-  height: "calc((100vh - 100px))",
+  height: "calc((100vh - 160px))",
   width: "40vw",
   borderRadius: 5,
   boxShadow: "5px 5px 10px #222",

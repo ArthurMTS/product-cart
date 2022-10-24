@@ -1,16 +1,14 @@
 import React from "react";
 import {
   HeaderWrapper,
-  LogoBox,
-  LogoText,
   NavBar,
   NavLink,
   UserAvatar,
 } from "./Header.styles";
 import { PagesRoutes } from "views/constants/routes";
-import ShoppingBag from "assets/icons/ShoppingBag.svg";
 import ShoppingCart from "assets/icons/ShoppingCart.svg";
 import { CartContext } from "contexts";
+import { Logo } from "components/Logo";
 
 export const Header: React.FC = () => {
   const { getItemsQuantity } = React.useContext(CartContext);
@@ -18,10 +16,7 @@ export const Header: React.FC = () => {
 
   return (
     <HeaderWrapper>
-      <LogoBox to={PagesRoutes.home}>
-        <img src={ShoppingBag} alt="Shopping bag" />
-        <LogoText>Dusk Store</LogoText>
-      </LogoBox>
+      <Logo />
 
       <NavBar>
         <NavLink to={PagesRoutes.home}>Home</NavLink>

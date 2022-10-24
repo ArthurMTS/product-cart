@@ -1,5 +1,6 @@
 import { Divider } from "@mui/material";
 import { Box } from "@mui/system";
+import { Footer } from "components/Footer";
 import { Header } from "components/Header";
 import { ProductInfo } from "config/interfaces";
 import { CartContext } from "contexts";
@@ -34,8 +35,9 @@ export const ProductDescription: React.FC = () => {
   React.useEffect(() => {
     const productID = Number(location.pathname.split("/").reverse()[0]);
     const prod = getProduct(productID);
+    if (!prod) navigate(PagesRoutes.products);
     setProduct(prod);
-  }, [getProduct, location]);
+  }, [getProduct, location, navigate]);
 
   return (
     <React.Fragment>
@@ -58,6 +60,7 @@ export const ProductDescription: React.FC = () => {
           </AddButton>
         </Aside>
       </Main>
+      <Footer />
     </React.Fragment>
   );
 };

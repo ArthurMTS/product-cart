@@ -5,6 +5,7 @@ import BackgroundHome from "assets/images/BackgroundHome.jpg";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { PagesRoutes } from "views/constants/routes";
+import { Footer } from "components/Footer";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ export const Home: React.FC = () => {
           alt="Glass window leading to a shop"
         />
       </Main>
+      <Footer />
     </React.Fragment>
   );
 };

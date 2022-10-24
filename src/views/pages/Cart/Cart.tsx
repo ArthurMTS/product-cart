@@ -1,4 +1,5 @@
 import { CartProductCard } from "components/CartProductCard";
+import { Footer } from "components/Footer";
 import { Header } from "components/Header";
 import { CartContext } from "contexts";
 import React from "react";
@@ -53,6 +54,7 @@ export const Cart: React.FC = () => {
           </CartSummary>
         </CartContent>
       </Main>
+      <Footer />
     </React.Fragment>
   );
 };

@@ -1,3 +1,4 @@
+import { Footer } from "components/Footer";
 import { Header } from "components/Header";
 import { ProductCard } from "components/ProductCard";
 import { api } from "config/api";
@@ -33,6 +34,7 @@ export const ProductList: React.FC = () => {
           />
         ))}
       </Main>
+      <Footer />
     </React.Fragment>
   );
 };

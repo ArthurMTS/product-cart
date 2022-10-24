@@ -6,7 +6,7 @@ export const Main = styled("main")({
   justifyContent: "center",
   gap: 30,
   width: "100%",
-  height: "100vh",
+  height: "calc(100vh - 60px)",
   background: "linear-gradient(#fff, #1976D2)",
   "@media only screen and (max-width: 375px)": {
     "&": {
