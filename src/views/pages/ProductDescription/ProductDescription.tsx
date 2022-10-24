@@ -6,10 +6,22 @@ import { CartContext } from "contexts";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PagesRoutes } from "views/constants/routes";
-import { AddButton, Aside, Description, DescriptionWrapper, Image, Main, Price, Rating, Title } from "./ProductDescription.styles";
+import {
+  AddButton,
+  Aside,
+  Description,
+  DescriptionWrapper,
+  Image,
+  Main,
+  Price,
+  Rating,
+  Title,
+} from "./ProductDescription.styles";
 
 export const ProductDescription: React.FC = () => {
-  const [product, setProduct] = React.useState<ProductInfo | undefined>({} as ProductInfo);
+  const [product, setProduct] = React.useState<ProductInfo | undefined>(
+    {} as ProductInfo,
+  );
   const { getProduct, addToCart } = React.useContext(CartContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,16 +43,10 @@ export const ProductDescription: React.FC = () => {
       <Main>
         <Image src={product?.image} alt={product?.title} />
         <DescriptionWrapper>
-          <Title>
-            {product?.title}
-          </Title>
-          <Rating>
-            Rating: {product?.rating?.rate}
-          </Rating>
+          <Title>{product?.title}</Title>
+          <Rating>Rating: {product?.rating?.rate}</Rating>
           <Divider />
-          <Description>
-            {product?.description}
-          </Description>
+          <Description>{product?.description}</Description>
         </DescriptionWrapper>
         <Aside>
           <Price>

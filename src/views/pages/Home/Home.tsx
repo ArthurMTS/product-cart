@@ -9,30 +9,24 @@ import { PagesRoutes } from "views/constants/routes";
 export const Home: React.FC = () => {
   const navigate = useNavigate();
 
-  const onShoppingButtonClick = () => {
-    navigate(PagesRoutes.products);
-  };
-  
+  const onShoppingButtonClick = () => navigate(PagesRoutes.products);
+
   return (
     <React.Fragment>
       <Header />
       <Main>
         <Section>
-          <Title>
-            Dusk Store
-          </Title>
-          <Subtitle>
-            The place to find everything you want.
-          </Subtitle>
-          <Button
-            variant="contained"
-            onClick={onShoppingButtonClick}
-          >
+          <Title>Dusk Store</Title>
+          <Subtitle>The place to find everything you want.</Subtitle>
+          <Button variant="contained" onClick={onShoppingButtonClick}>
             Go shopping!
           </Button>
         </Section>
 
-        <BackgroundImage src={BackgroundHome} alt="Glass window leading to a shop" />
+        <BackgroundImage
+          src={BackgroundHome}
+          alt="Glass window leading to a shop"
+        />
       </Main>
     </React.Fragment>
   );

@@ -29,10 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const navigate = useNavigate();
   const { addToCart } = React.useContext(CartContext);
 
-  const onProductTitleClick = () => {
-    navigate(`/products/${id}`);
-  };
-
+  const onProductTitleClick = () => navigate(`/products/${id}`);
   const onAddToCartButtonClick = () => {
     addToCart({
       id,
@@ -44,11 +41,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <CardWrapper>
-      <Image
-        src={image}
-        alt={title}
-        onClick={onProductTitleClick}  
-      />
+      <Image src={image} alt={title} onClick={onProductTitleClick} />
       <Box>
         <ProductTitle onClick={onProductTitleClick}>
           {title.length > 50 ? `${title?.slice(0, 50)}...` : title}
@@ -60,10 +53,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </Box>
       <ProductFooter>
         <ProductPrice>U$ {price.toFixed(2)}</ProductPrice>
-        <Button
-          variant="contained"
-          onClick={onAddToCartButtonClick}
-        >
+        <Button variant="contained" onClick={onAddToCartButtonClick}>
           Add to cart
         </Button>
       </ProductFooter>

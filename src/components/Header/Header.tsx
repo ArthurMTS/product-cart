@@ -13,7 +13,7 @@ import ShoppingCart from "assets/icons/ShoppingCart.svg";
 import { CartContext } from "contexts";
 
 export const Header: React.FC = () => {
-  const { getItemsQuantity } = React.useContext(CartContext)
+  const { getItemsQuantity } = React.useContext(CartContext);
   const itemsQuantity = getItemsQuantity();
 
   return (

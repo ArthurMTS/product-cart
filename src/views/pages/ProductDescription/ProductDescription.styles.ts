@@ -5,12 +5,23 @@ export const Main = styled("main")({
   display: "flex",
   gap: "1vw",
   padding: "0 5vw",
+  "@media only screen and (max-width: 660px)": {
+    "&": {
+      gap: "2vh",
+      flexDirection: "column",
+    },
+  },
 });
 
 export const Image = styled("img")({
   width: "20vw",
   borderRadius: 5,
   alignSelf: "flex-start",
+  "@media only screen and (max-width: 660px)": {
+    "&": {
+      margin: "0 auto 0 auto",
+    },
+  },
 });
 
 export const DescriptionWrapper = styled("div")({
@@ -18,12 +29,23 @@ export const DescriptionWrapper = styled("div")({
   backgroundColor: "#FFFFFF",
   padding: 20,
   borderRadius: 5,
+  "@media only screen and (max-width: 660px)": {
+    "&": {
+      width: "80vw",
+    },
+  },
 });
 
 export const Title = styled(Typography)({
   fontSize: 26,
   fontWeight: 500,
   color: "#222",
+  "@media only screen and (max-width: 470px)": {
+    "&": {
+      fontSize: 20,
+      textAlign: "center",
+    },
+  },
 });
 
 export const Rating = styled(Typography)({
@@ -38,6 +60,11 @@ export const Description = styled(Typography)({
   color: "#222",
   textAlign: "justify",
   textIndent: 50,
+  "@media only screen and (max-width: 355px)": {
+    "&": {
+      fontSize: 16,
+    },
+  },
 });
 
 export const Aside = styled("div")({
@@ -45,6 +72,11 @@ export const Aside = styled("div")({
   padding: 20,
   borderRadius: 5,
   alignSelf: "flex-start",
+  "@media only screen and (max-width: 660px)": {
+    "&": {
+      margin: "0 auto 0 auto",
+    },
+  },
 });
 
 export const Price = styled(Typography)({

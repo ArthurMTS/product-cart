@@ -22,7 +22,7 @@ export const ProductList: React.FC = () => {
     <React.Fragment>
       <Header />
       <Main>
-        {products?.map(product => 
+        {products?.map(product => (
           <ProductCard
             key={product?.id}
             id={product?.id}
@@ -30,8 +30,8 @@ export const ProductList: React.FC = () => {
             title={product?.title}
             description={product?.description || ""}
             price={product?.price}
-          />  
-        )}
+          />
+        ))}
       </Main>
     </React.Fragment>
   );

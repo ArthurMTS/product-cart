@@ -13,6 +13,38 @@ export const HeaderWrapper = styled("header")({
   left: 0,
   top: 0,
   zIndex: 1,
+  "@media only screen and (max-width: 630px)": {
+    "&": {
+      flexDirection: "column",
+      padding: "10px 0",
+    },
+  },
+  "@media only screen and (max-width: 450px)": {
+    "& a": {
+      fontSize: 16,
+    },
+    "& p": {
+      fontSize: 20,
+    },
+    "& img": {
+      width: 20,
+      height: 20,
+    },
+    "& img[alt='user avatar']": {
+      width: 35,
+      height: 35,
+    },
+  },
+  "@media only screen and (max-width: 380px)": {
+    "& img[alt='user avatar']": {
+      display: "none",
+    },
+  },
+  "@media only screen and (max-width: 320px)": {
+    "& a": {
+      fontSize: 12,
+    },
+  },
 });
 
 export const LogoBox = styled(Link)({

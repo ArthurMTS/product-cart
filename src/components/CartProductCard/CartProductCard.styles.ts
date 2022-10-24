@@ -17,10 +17,6 @@ export const ProductData = styled("div")({
   gap: 10,
 });
 
-export const TitleWrapper = styled("div")({
-  
-});
-
 export const Image = styled("img")({
   height: 60,
   width: 60,
@@ -35,6 +31,16 @@ export const Title = styled(Typography)({
   "&:hover": {
     color: "rgb(25, 118, 210)",
   },
+  "@media only screen and (max-width: 840px)": {
+    "&": {
+      fontSize: 14,
+    },
+  },
+  "@media only screen and (max-width: 730px)": {
+    "&": {
+      fontSize: 12,
+    },
+  },
 });
 
 export const Description = styled("div")({
@@ -45,11 +51,21 @@ export const Description = styled("div")({
 export const Units = styled(Typography)({
   fontStyle: "italic",
   fontWeight: 500,
+  "@media only screen and (max-width: 840px)": {
+    "&": {
+      fontSize: 12,
+    },
+  },
 });
 
 export const Price = styled(Typography)({
   fontStyle: "italic",
   fontWeight: 500,
+  "@media only screen and (max-width: 840px)": {
+    "&": {
+      fontSize: 12,
+    },
+  },
 });
 
 export const ProductActions = styled("div")({

@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 
 export const CardWrapper = styled("div")({
   backgroundColor: "#FFFFFF",
-  width: "20vw",
+  width: 260,
   padding: 20,
   borderRadius: 5,
   boxShadow: "5px 5px 5px #353545",
@@ -12,6 +12,12 @@ export const CardWrapper = styled("div")({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "space-between",
+  "@media only screen and (max-width: 320px)": {
+    "&": {
+      transform: "scale(0.7)",
+      marginTop: -50,
+    },
+  },
 });
 
 export const Image = styled("img")({

@@ -10,7 +10,6 @@ import {
   ProductActions,
   ProductData,
   Title,
-  TitleWrapper,
   Units,
 } from "./CartProductCard.styles";
 import TrashCan from "assets/icons/TrashCan.svg";
@@ -29,24 +28,20 @@ export const CartProductCard: React.FC<ProductCartInfo> = ({
   const { incrementCountCart, decrementCountCart, removeFromCart } =
     React.useContext(CartContext);
 
-  const onArrouUpButtonClick = () => {
+  const onArrouUpButtonClick = () =>
     incrementCountCart(id);
-  };
-  const onArrouDownButtonClick = () => {
+  const onArrouDownButtonClick = () =>
     decrementCountCart(id);
-  };
-  const onDeleteButtonClick = () => {
+  const onDeleteButtonClick = () =>
     removeFromCart(id);
-  };
-  const onProductItemClick = () => {
+  const onProductItemClick = () =>
     navigate(`/products/${id}`);
-  };
 
   return (
     <CardWrapper>
       <ProductData>
         <Image src={image} alt={title} onClick={onProductItemClick} />
-        <TitleWrapper>
+        <Box>
           <Title onClick={onProductItemClick}>
             {title.length < 50 ? title : `${title.slice(0, 30)}...`}
           </Title>
@@ -54,7 +49,7 @@ export const CartProductCard: React.FC<ProductCartInfo> = ({
             <Units>{count} Units</Units>
             <Price>U$ {(count * price).toFixed(2)}</Price>
           </Description>
-        </TitleWrapper>
+        </Box>
       </ProductData>
       <ProductActions>
         <Box>

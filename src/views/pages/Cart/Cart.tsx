@@ -2,7 +2,17 @@ import { CartProductCard } from "components/CartProductCard";
 import { Header } from "components/Header";
 import { CartContext } from "contexts";
 import React from "react";
-import { BuyButton, CartContent, CartProducts, CartSummary, CartText, Main, SummaryItem, SummaryLabel, SummaryValue } from "./Cart.styles";
+import {
+  BuyButton,
+  CartContent,
+  CartProducts,
+  CartSummary,
+  CartText,
+  Main,
+  SummaryItem,
+  SummaryLabel,
+  SummaryValue,
+} from "./Cart.styles";
 
 export const Cart: React.FC = () => {
   const { cart, getTotal } = React.useContext(CartContext);
@@ -15,7 +25,7 @@ export const Cart: React.FC = () => {
 
         <CartContent>
           <CartProducts>
-            {cart?.map(product =>
+            {cart?.map(product => (
               <CartProductCard
                 key={product.id}
                 id={product.id}
@@ -23,39 +33,23 @@ export const Cart: React.FC = () => {
                 image={product.image}
                 price={product.price}
                 count={product.count}
-              />  
-            )}
+              />
+            ))}
           </CartProducts>
           <CartSummary>
             <SummaryItem>
-              <SummaryLabel>
-                Shipping
-              </SummaryLabel>
-              <SummaryValue>
-                U$ 0.00
-              </SummaryValue>
+              <SummaryLabel>Shipping</SummaryLabel>
+              <SummaryValue>U$ 0.00</SummaryValue>
             </SummaryItem>
             <SummaryItem>
-              <SummaryLabel>
-                Discount
-              </SummaryLabel>
-              <SummaryValue>
-                U$ 0.00
-              </SummaryValue>
+              <SummaryLabel>Discount</SummaryLabel>
+              <SummaryValue>U$ 0.00</SummaryValue>
             </SummaryItem>
             <SummaryItem>
-              <SummaryLabel>
-                Total
-              </SummaryLabel>
-              <SummaryValue>
-                U$ {getTotal().toFixed(2)}
-              </SummaryValue>
+              <SummaryLabel>Total</SummaryLabel>
+              <SummaryValue>U$ {getTotal().toFixed(2)}</SummaryValue>
             </SummaryItem>
-            <BuyButton
-              variant="contained"
-            >
-              Make purchase
-            </BuyButton>
+            <BuyButton variant="contained">Make purchase</BuyButton>
           </CartSummary>
         </CartContent>
       </Main>

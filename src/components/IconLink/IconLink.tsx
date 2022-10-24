@@ -7,14 +7,8 @@ interface IconLinkProps {
   alt?: string;
 }
 
-export const IconLink: React.FC<IconLinkProps> = ({
-  to,
-  icon,
-  alt,
-}) => {
-  return (
-    <Link href={to} target="_blank">
-      <img src={icon} alt={alt || ""} />
-    </Link>
-  );
-};
+export const IconLink: React.FC<IconLinkProps> = ({ to, icon, alt }) => (
+  <Link href={to} target="_blank">
+    <img src={icon} alt={alt || ""} />
+  </Link>
+);
