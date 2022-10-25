@@ -1,7 +1,6 @@
 import { Divider } from "@mui/material";
 import { Box } from "@mui/system";
-import { Footer } from "components/Footer";
-import { Header } from "components/Header";
+import { Footer, Header } from "components";
 import { ProductInfo } from "config/interfaces";
 import { CartContext } from "contexts";
 import React from "react";

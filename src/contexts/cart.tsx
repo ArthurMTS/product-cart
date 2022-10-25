@@ -28,7 +28,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const getProduct = (id: number) =>
     products.find(product => product.id === id);
-
   const addToCart = (product: ProductInfo) => {
     const cartList = [...cart];
     const isInCart = cartList.some(item => item.id === product.id);
@@ -43,38 +42,31 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     });
     setCart(cartList);
   };
-
   const removeFromCart = (id: number) => {
     const cartList = cart.filter(product => product.id !== id);
     setCart(cartList);
   };
-
   const getItemsQuantity = () =>
     cart.reduce((total, product) => total + product.count, 0);
-
   const getTotal = () =>
     cart.reduce((total, product) => total + product.count * product.price, 0);
-
   const incrementCountCart = (id: number) => {
     const cartList = cart.map(product => {
       if (product.id === id) product.count += 1;
 
       return product;
     });
-
     setCart(cartList);
   };
-
   const decrementCountCart = (id: number) => {
     const cartList = cart.map(product => {
       if (product.id === id && product.count > 1) product.count -= 1;
 
       return product;
     });
-
     setCart(cartList);
   };
-
+  
   return (
     <CartContext.Provider
       value={{

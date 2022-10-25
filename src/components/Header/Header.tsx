@@ -8,7 +8,7 @@ import {
 import { PagesRoutes } from "views/constants/routes";
 import ShoppingCart from "assets/icons/ShoppingCart.svg";
 import { CartContext } from "contexts";
-import { Logo } from "components/Logo";
+import { Logo } from "components";
 
 export const Header: React.FC = () => {
   const { getItemsQuantity } = React.useContext(CartContext);

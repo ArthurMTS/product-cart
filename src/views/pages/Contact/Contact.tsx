@@ -1,5 +1,3 @@
-import { Header } from "components/Header";
-import { IconLink } from "components/IconLink";
 import React from "react";
 import { Main } from "./Contact.styles";
 import Facebook from "assets/icons/Facebook.svg";
@@ -7,7 +5,7 @@ import Linkedin from "assets/icons/Linkedin.svg";
 import Mail from "assets/icons/Mail.svg";
 import Phone from "assets/icons/Phone.svg";
 import Twitter from "assets/icons/Twitter.svg";
-import { Footer } from "components/Footer";
+import { Footer, Header, IconLink } from "components";
 
 export const Contact: React.FC = () => (
   <React.Fragment>

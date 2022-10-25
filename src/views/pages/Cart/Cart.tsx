@@ -1,6 +1,5 @@
+import { Footer, Header } from "components";
 import { CartProductCard } from "components/CartProductCard";
-import { Footer } from "components/Footer";
-import { Header } from "components/Header";
 import { CartContext } from "contexts";
 import React from "react";
 import {

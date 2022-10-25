@@ -1,4 +1,4 @@
-import { Logo } from "components/Logo";
+import { Logo } from "components";
 import React from "react";
 import { FooterWrapper } from "./Footer.styles";
 

@@ -1,11 +1,10 @@
-import { Header } from "components/Header";
 import React from "react";
 import { BackgroundImage, Main, Section, Subtitle, Title } from "./Home.styles";
 import BackgroundHome from "assets/images/BackgroundHome.jpg";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { PagesRoutes } from "views/constants/routes";
-import { Footer } from "components/Footer";
+import { Footer, Header } from "components";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -23,7 +22,6 @@ export const Home: React.FC = () => {
             Go shopping!
           </Button>
         </Section>
-
         <BackgroundImage
           src={BackgroundHome}
           alt="Glass window leading to a shop"

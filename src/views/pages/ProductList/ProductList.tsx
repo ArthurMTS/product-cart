@@ -1,6 +1,4 @@
-import { Footer } from "components/Footer";
-import { Header } from "components/Header";
-import { ProductCard } from "components/ProductCard";
+import { Footer, Header, ProductCard } from "components";
 import { api } from "config/api";
 import { CartContext } from "contexts";
 import React from "react";
@@ -12,10 +10,8 @@ export const ProductList: React.FC = () => {
   React.useEffect(() => {
     const fetchProducts = async () => {
       const result = await api.get("/products");
-
       setProducts(result.data);
     };
-
     fetchProducts();
   }, [setProducts]);
 
